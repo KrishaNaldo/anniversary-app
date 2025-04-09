@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/anniversary-app/static/css/main.a31d0008.css",
-    "main.js": "/anniversary-app/static/js/main.94dabf32.js",
+    "main.css": "/anniversary-app/static/css/main.c9500eb5.css",
+    "main.js": "/anniversary-app/static/js/main.5dead334.js",
     "static/media/4.JPG": "/anniversary-app/static/media/4.a0c0783ca0dd7242d19f.JPG",
     "static/media/2.JPEG": "/anniversary-app/static/media/2.e3f3094ca9a742d71e53.JPEG",
     "static/media/8.png": "/anniversary-app/static/media/8.377c52c8b1d0bf89f664.png",
@@ -11,11 +11,11 @@
     "static/media/6.png": "/anniversary-app/static/media/6.88dae304ccd9b7741eb2.png",
     "static/media/9.jpg": "/anniversary-app/static/media/9.67a93e1fdcb7909b1ca8.jpg",
     "index.html": "/anniversary-app/index.html",
-    "main.a31d0008.css.map": "/anniversary-app/static/css/main.a31d0008.css.map",
-    "main.94dabf32.js.map": "/anniversary-app/static/js/main.94dabf32.js.map"
+    "main.c9500eb5.css.map": "/anniversary-app/static/css/main.c9500eb5.css.map",
+    "main.5dead334.js.map": "/anniversary-app/static/js/main.5dead334.js.map"
   },
   "entrypoints": [
-    "static/css/main.a31d0008.css",
-    "static/js/main.94dabf32.js"
+    "static/css/main.c9500eb5.css",
+    "static/js/main.5dead334.js"
   ]
 }
