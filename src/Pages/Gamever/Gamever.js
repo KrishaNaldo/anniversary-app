@@ -7,7 +7,7 @@ const PasswordProtectedGamever = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const correctPassword = '06042022'; // DDMMYYYY format
+  const correctPassword = '04082022'; // DDMMYYYY format
   
   // Game state
   const [score, setScore] = useState(0);

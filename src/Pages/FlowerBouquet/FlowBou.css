@@ -106,6 +106,50 @@
     text-align: center;
   }
   
+  /* Music Control Button */
+  .fb-music-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(109, 89, 122, 0.7);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--fb-shadow-color);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .fb-music-button:hover {
+    background: var(--fb-primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(109, 89, 122, 0.6);
+  }
+  
+  .fb-music-button.fb-music-playing {
+    background: var(--fb-accent-color);
+    animation: fb-pulse 2s infinite;
+  }
+  
+  @keyframes fb-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(230, 57, 70, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
+    }
+  }
+  
   /* Gift Box */
   .fb-gift-box {
     position: relative;
@@ -594,5 +638,12 @@
       width: 100%;
       max-width: 240px;
       text-align: center;
+    }
+    
+    .fb-music-button {
+      top: 10px;
+      right: 10px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
     }
   }
