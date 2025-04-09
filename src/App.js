@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/anniversary-app">
       <Routes>
         <Route path="/" element={<Anniversary />} /> 
         <Route path="/pictures" element={<Pictures />} />
@@ -20,7 +20,6 @@ function App() {
             <Gamever />
           </PasswordProtected>
         } />
-
       </Routes>
     </Router>
   );
