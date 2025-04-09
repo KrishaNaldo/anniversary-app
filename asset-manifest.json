@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/anniversary-app/static/css/main.a31d0008.css",
-    "main.js": "/anniversary-app/static/js/main.cbe545d4.js",
-    "static/media/4.JPG": "/anniversary-app/static/media/4.a0c0783ca0dd7242d19f.JPG",
-    "static/media/2.JPEG": "/anniversary-app/static/media/2.e3f3094ca9a742d71e53.JPEG",
-    "static/media/8.png": "/anniversary-app/static/media/8.377c52c8b1d0bf89f664.png",
-    "static/media/10.png": "/anniversary-app/static/media/10.161a96a17ee79aca19a5.png",
-    "static/media/7.png": "/anniversary-app/static/media/7.e8bfb2492d5c79ddc66b.png",
-    "static/media/5.png": "/anniversary-app/static/media/5.5cf7709139450f276523.png",
-    "static/media/6.png": "/anniversary-app/static/media/6.88dae304ccd9b7741eb2.png",
-    "static/media/9.jpg": "/anniversary-app/static/media/9.67a93e1fdcb7909b1ca8.jpg",
-    "index.html": "/anniversary-app/index.html",
-    "main.a31d0008.css.map": "/anniversary-app/static/css/main.a31d0008.css.map",
-    "main.cbe545d4.js.map": "/anniversary-app/static/js/main.cbe545d4.js.map"
+    "main.css": "/KrishaNaldo/anniversary-app/static/css/main.76ad7200.css",
+    "main.js": "/KrishaNaldo/anniversary-app/static/js/main.94dabf32.js",
+    "static/media/4.JPG": "/KrishaNaldo/anniversary-app/static/media/4.a0c0783ca0dd7242d19f.JPG",
+    "static/media/2.JPEG": "/KrishaNaldo/anniversary-app/static/media/2.e3f3094ca9a742d71e53.JPEG",
+    "static/media/8.png": "/KrishaNaldo/anniversary-app/static/media/8.377c52c8b1d0bf89f664.png",
+    "static/media/10.png": "/KrishaNaldo/anniversary-app/static/media/10.161a96a17ee79aca19a5.png",
+    "static/media/7.png": "/KrishaNaldo/anniversary-app/static/media/7.e8bfb2492d5c79ddc66b.png",
+    "static/media/5.png": "/KrishaNaldo/anniversary-app/static/media/5.5cf7709139450f276523.png",
+    "static/media/6.png": "/KrishaNaldo/anniversary-app/static/media/6.88dae304ccd9b7741eb2.png",
+    "static/media/9.jpg": "/KrishaNaldo/anniversary-app/static/media/9.67a93e1fdcb7909b1ca8.jpg",
+    "index.html": "/KrishaNaldo/anniversary-app/index.html",
+    "main.76ad7200.css.map": "/KrishaNaldo/anniversary-app/static/css/main.76ad7200.css.map",
+    "main.94dabf32.js.map": "/KrishaNaldo/anniversary-app/static/js/main.94dabf32.js.map"
   },
   "entrypoints": [
-    "static/css/main.a31d0008.css",
-    "static/js/main.cbe545d4.js"
+    "static/css/main.76ad7200.css",
+    "static/js/main.94dabf32.js"
   ]
 }
