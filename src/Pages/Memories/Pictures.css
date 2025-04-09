@@ -1,0 +1,610 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap');
+
+.pictures-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pictures-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: #e94560;
+  text-shadow: 0 0 12px rgba(233, 69, 96, 0.6);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px rgba(233, 69, 96, 0.5); }
+  to { text-shadow: 0 0 20px rgba(233, 69, 96, 0.8), 0 0 30px rgba(233, 69, 96, 0.5); }
+}
+
+.pattern-hint {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 35px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.pattern-hint:hover {
+  color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.photo-viewer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+.photo-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.photo-nav {
+  background: rgba(233, 69, 96, 0.3);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 5; /* Ensure buttons are clickable above video */
+}
+
+.photo-nav:hover {
+  background: rgba(233, 69, 96, 0.8);
+  transform: scale(1.15);
+  box-shadow: 0 5px 15px rgba(233, 69, 96, 0.5);
+}
+
+.photo-nav:active {
+  transform: scale(0.95);
+}
+
+.photo-frame {
+  width: 80%;
+  height: 450px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.photo-frame:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(233, 69, 96, 0.3);
+  transform: translateY(-5px);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s ease;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Add overlay gradient for both images and videos */
+.photo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.photo:hover {
+  transform: scale(1.08);
+}
+
+/* Video container specific styling */
+.video-container {
+  background-color: #16213e;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Video content styling - FIXED */
+.video-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  background: #000; /* Fallback color */
+}
+
+/* Make video controls easier to access */
+.video-content::-webkit-media-controls-panel {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-content:hover::-webkit-media-controls-panel {
+  opacity: 1;
+}
+
+/* Photo image classes - add your actual image paths here */
+.photo-1 {
+  background-image: url('../photos/2.JPEG');
+}
+
+.photo-2 {
+  background-image: url('../photos/7.png');
+}
+
+.photo-3 {
+  background-image: url('../photos/8.png');
+}
+
+.photo-4 {
+  background-image: url('../photos/4.JPG');
+}
+
+.photo-5 {
+  background-image: url('../photos/6.png');
+}
+
+.photo-6 {
+  background-image: url('../photos/5.png');
+}
+
+.photo-7 {
+  background-image: url('../photos/9.jpg');
+}
+.photo-8 {
+  background-image: url('../photos/10.png');
+}
+
+.photo-info {
+  padding: 25px;
+  width: 100%;
+  transition: all 0.5s ease;
+  transform: translateY(30px);
+  opacity: 0.9;
+  position: relative;
+  z-index: 2; /* Place above the overlay gradient */
+}
+
+.photo:hover .photo-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.photo-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.7rem;
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.photo-date {
+  color: #e94560;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.photo-info p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.photo-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.photo-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.photo-dot::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.photo-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.2);
+}
+
+.photo-dot.active {
+  background: #e94560;
+  transform: scale(1.3);
+}
+
+.photo-dot.active::after {
+  border-color: rgba(233, 69, 96, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  70% { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+.pattern-clicks {
+  margin: 40px 0;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.pattern-clicks:hover {
+  opacity: 1;
+}
+
+.pattern-row {
+  display: flex;
+  justify-content: center;
+}
+
+.pattern-button {
+  width: 35px;
+  height: 35px;
+  margin: 4px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.pattern-button.corner {
+  background-color: rgba(233, 69, 96, 0.7);
+}
+
+.pattern-button.edge {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.pattern-button.middle {
+  background-color: rgba(75, 192, 255, 0.7);
+}
+
+.pattern-button:hover {
+  transform: scale(1.15) translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.pattern-button:active {
+  transform: scale(0.95);
+}
+
+.secret-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 1s ease;
+  backdrop-filter: blur(8px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.secret-content {
+  background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 550px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(233, 69, 96, 0.7);
+  border: 2px solid #e94560;
+  animation: scaleIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.secret-content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+  animation: rotate 15s linear infinite;
+  z-index: -1;
+}
+
+/* New secret message timer bar */
+.secret-timer {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  margin-top: 25px;
+  overflow: hidden;
+}
+
+.timer-bar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #e94560;
+  border-radius: 3px;
+  animation: countdown 15s linear forwards;
+}
+
+@keyframes countdown {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.secret-content h3 {
+  color: #e94560;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  text-shadow: 0 0 10px rgba(233, 69, 96, 0.4);
+}
+
+.secret-content p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.secret-signature {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #e94560;
+  margin-top: 30px;
+  text-shadow: 0 0 5px rgba(233, 69, 96, 0.5);
+}
+
+.return-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: rgba(233, 69, 96, 0.8);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  margin-top: 30px;
+  box-shadow: 0 8px 20px rgba(233, 69, 96, 0.4);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.return-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.return-button:hover {
+  background: #e94560;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(233, 69, 96, 0.6);
+}
+
+.return-button:hover::before {
+  left: 100%;
+}
+
+.return-button span {
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .photo-frame {
+    height: 350px;
+    width: 90%;
+  }
+  
+  .pictures-title {
+    font-size: 2.4rem;
+  }
+  
+  .photo-info h3 {
+    font-size: 1.4rem;
+  }
+  
+  .photo-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  
+  .secret-content {
+    padding: 30px;
+    margin: 0 20px;
+  }
+  
+  .secret-content h3 {
+    font-size: 1.7rem;
+  }
+  
+  .secret-signature {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-frame {
+    height: 300px;
+    width: 100%;
+  }
+  
+  .photo-controls {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .photo-nav {
+    margin: 0 10px;
+  }
+  
+  .pictures-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .photo-info {
+    padding: 15px;
+  }
+  
+  .photo-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .pattern-clicks {
+    transform: scale(0.9);
+  }
+  
+  .return-button {
+    padding: 12px 24px;
+  }
+}
+.navigation-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Game button styling to complement the return button */
+.game-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: rgba(75, 192, 255, 0.8);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(75, 192, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.game-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.game-button:hover {
+  background: rgb(75, 192, 255);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(75, 192, 255, 0.6);
+}
+
+.game-button:hover::before {
+  left: 100%;
+}
+
+.game-button span {
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+/* Update existing return button class to work with the navigation container */
+.return-button {
+  margin-top: 0;
+}
+
+/* Media query updates for responsive design */
+@media (max-width: 480px) {
+  .navigation-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .game-button, .return-button {
+    padding: 12px 24px;
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+  }
+}

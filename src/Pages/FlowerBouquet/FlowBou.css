@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* Flower Bouquet Component - Scoped CSS */
+.fb-bouquet-container {
+    --fb-primary-color: #6d597a;
+    --fb-accent-color: #e63946;
+    --fb-bg-gradient-1: #ffd6e0;
+    --fb-bg-gradient-2: #ffefeb;
+    --fb-bg-gradient-3: #ffcdb2;
+    --fb-rose-color-1: #ff8ba7;
+    --fb-rose-color-2: #e63946;
+    --fb-tulip-color-1: #ffd6ff;
+    --fb-tulip-color-2: #b5838d;
+    --fb-stem-color: #31572c;
+    --fb-leaf-color: #4f772d;
+    --fb-shadow-color: rgba(109, 89, 122, 0.4);
+    
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--fb-bg-gradient-1) 0%, var(--fb-bg-gradient-2) 50%, var(--fb-bg-gradient-3) 100%);
+    color: var(--fb-primary-color);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Password Screen Styling */
+  .fb-password-container {
+    background: linear-gradient(135deg, var(--fb-bg-gradient-1) 0%, var(--fb-bg-gradient-2) 50%, var(--fb-bg-gradient-3) 100%);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin: 100px auto;
+    box-shadow: 0 10px 30px var(--fb-shadow-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--fb-primary-color);
+  }
+  
+  .fb-password-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--fb-primary-color);
+  }
+  
+  .fb-password-question {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .fb-password-hint {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+  
+  .fb-password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .fb-password-input {
+    padding: 12px;
+    border-radius: 30px;
+    border: 2px solid var(--fb-primary-color);
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .fb-password-button {
+    background: var(--fb-primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--fb-shadow-color);
+  }
+  
+  .fb-password-button:hover {
+    background: #574a64;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(109, 89, 122, 0.6);
+  }
+  
+  .fb-password-error {
+    color: var(--fb-accent-color);
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  /* Bouquet Page Styling */
+  .fb-bouquet-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    color: var(--fb-primary-color);
+    text-shadow: 2px 2px 0px #ffb4a2;
+    text-align: center;
+  }
+  
+  /* Gift Box */
+  .fb-gift-box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+    perspective: 1000px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+  }
+  
+  .fb-gift-box-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #b392ac;
+    border: 3px solid var(--fb-primary-color);
+    box-shadow: 0 10px 25px rgba(109, 89, 122, 0.5);
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+  }
+  
+  .fb-gift-lid {
+    position: absolute;
+    width: 110%;
+    height: 30px;
+    left: -5%;
+    top: -30px;
+    background: #b392ac;
+    border: 3px solid var(--fb-primary-color);
+    border-bottom: none;
+    transform-origin: bottom;
+    transition: all 0.8s ease;
+    transform-style: preserve-3d;
+  }
+  
+  .fb-gift-ribbon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -45px;
+    left: 50%;
+    margin-left: -15px;
+    background: var(--fb-accent-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
+    z-index: 10;
+  }
+  
+  .fb-gift-ribbon::before, .fb-gift-ribbon::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    background: var(--fb-accent-color);
+    border-radius: 50%;
+  }
+  
+  .fb-gift-ribbon::before {
+    left: -10px;
+    transform: rotate(-30deg);
+    z-index: -1;
+  }
+  
+  .fb-gift-ribbon::after {
+    right: -10px;
+    transform: rotate(30deg);
+    z-index: -1;
+  }
+  
+  .fb-gift-box:hover .fb-gift-lid {
+    transform: rotateX(-80deg);
+  }
+  
+  .fb-open-gift-button {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--fb-accent-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+  }
+  
+  .fb-open-gift-button:hover {
+    transform: translateX(-50%) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.6);
+  }
+  
+  /* Flower Bouquet */
+  .fb-bouquet-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fb-fadeIn 2s ease;
+  }
+  
+  .fb-bouquet {
+    position: relative;
+    width: 300px;
+    height: 450px;
+    margin: 20px auto;
+  }
+  
+  /* Roses */
+  .fb-flower {
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+  }
+  
+  .fb-rose {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .fb-flower-center {
+    top: 50px;
+    left: 110px;
+    z-index: 10;
+  }
+  
+  .fb-left-rose {
+    top: 100px;
+    left: 40px;
+    transform: scale(0.9) rotate(-15deg);
+    z-index: 8;
+  }
+  
+  .fb-right-rose {
+    top: 90px;
+    right: 40px;
+    transform: scale(0.9) rotate(15deg);
+    z-index: 9;
+  }
+  
+  .fb-petal-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+  }
+  
+  .fb-outer {
+    animation: fb-spin 15s linear infinite;
+  }
+  
+  .fb-middle {
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+    animation: fb-spin 12s linear infinite reverse;
+  }
+  
+  .fb-inner {
+    width: 40%;
+    height: 40%;
+    top: 30%;
+    left: 30%;
+    animation: fb-spin 10s linear infinite;
+  }
+  
+  .fb-petal {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: var(--fb-accent-color);
+    border-radius: 50% 50% 50% 0;
+    transform-origin: 100% 0;
+    box-shadow: inset -2px -2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fb-rose .fb-petal {
+    background: linear-gradient(to bottom right, var(--fb-rose-color-1), var(--fb-rose-color-2));
+  }
+  
+  .fb-petal-ring.fb-outer .fb-petal:nth-child(1) { transform: rotate(0deg); }
+  .fb-petal-ring.fb-outer .fb-petal:nth-child(2) { transform: rotate(45deg); }
+  .fb-petal-ring.fb-outer .fb-petal:nth-child(3) { transform: rotate(90deg); }
+  .fb-petal-ring.fb-outer .fb-petal:nth-child(4) { transform: rotate(135deg); }
+  .fb-petal-ring.fb-outer .fb-petal:nth-child(5) { transform: rotate(180deg); }
+  .fb-petal-ring.fb-outer .fb-petal:nth-child(6) { transform: rotate(225deg); }
+  .fb-petal-ring.fb-outer .fb-petal:nth-child(7) { transform: rotate(270deg); }
+  .fb-petal-ring.fb-outer .fb-petal:nth-child(8) { transform: rotate(315deg); }
+  
+  .fb-petal-ring.fb-middle .fb-petal:nth-child(1) { transform: rotate(30deg); }
+  .fb-petal-ring.fb-middle .fb-petal:nth-child(2) { transform: rotate(90deg); }
+  .fb-petal-ring.fb-middle .fb-petal:nth-child(3) { transform: rotate(150deg); }
+  .fb-petal-ring.fb-middle .fb-petal:nth-child(4) { transform: rotate(210deg); }
+  .fb-petal-ring.fb-middle .fb-petal:nth-child(5) { transform: rotate(270deg); }
+  .fb-petal-ring.fb-middle .fb-petal:nth-child(6) { transform: rotate(330deg); }
+  
+  .fb-petal-ring.fb-inner .fb-petal:nth-child(1) { transform: rotate(0deg); }
+  .fb-petal-ring.fb-inner .fb-petal:nth-child(2) { transform: rotate(90deg); }
+  .fb-petal-ring.fb-inner .fb-petal:nth-child(3) { transform: rotate(180deg); }
+  .fb-petal-ring.fb-inner .fb-petal:nth-child(4) { transform: rotate(270deg); }
+  
+  .fb-center {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    background: var(--fb-tulip-color-2);
+    border-radius: 50%;
+    top: 35%;
+    left: 35%;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Tulips */
+  .fb-tulip {
+    width: 60px;
+    height: 90px;
+  }
+  
+  .fb-left-tulip {
+    top: 120px;
+    left: 10px;
+    transform: scale(0.8) rotate(-25deg);
+    z-index: 3;
+  }
+  
+  .fb-right-tulip {
+    top: 110px;
+    right: 10px;
+    transform: scale(0.8) rotate(25deg);
+    z-index: 4;
+  }
+  
+  .fb-tulip .fb-petal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--fb-tulip-color-1), var(--fb-tulip-color-2));
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom center;
+  }
+  
+  .fb-tulip .fb-petal:nth-child(1) {
+    transform: translateX(-30%) rotate(-15deg);
+    z-index: 1;
+  }
+  
+  .fb-tulip .fb-petal:nth-child(2) {
+    z-index: 2;
+  }
+  
+  .fb-tulip .fb-petal:nth-child(3) {
+    transform: translateX(30%) rotate(15deg);
+    z-index: 1;
+  }
+  
+  /* Stems and Leaves */
+  .fb-stems {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .fb-stem {
+    position: absolute;
+    width: 8px;
+    background: var(--fb-stem-color);
+    border-radius: 4px;
+    bottom: 0;
+  }
+  
+  .fb-stem-1 {
+    height: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+  
+  .fb-stem-2 {
+    height: 200px;
+    left: 65px;
+    transform: rotate(-10deg);
+    z-index: 2;
+  }
+  
+  .fb-stem-3 {
+    height: 180px;
+    right: 65px;
+    transform: rotate(10deg);
+    z-index: 2;
+  }
+  
+  .fb-stem-4 {
+    height: 160px;
+    left: 40px;
+    transform: rotate(-15deg);
+    z-index: 1;
+  }
+  
+  .fb-stem-5 {
+    height: 150px;
+    right: 40px;
+    transform: rotate(15deg);
+    z-index: 1;
+  }
+  
+  .fb-leaves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  
+  .fb-leaf {
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background: var(--fb-leaf-color);
+    border-radius: 50%;
+    box-shadow: inset -2px -2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fb-leaf-1 {
+    bottom: 150px;
+    left: 90px;
+    transform: rotate(-30deg);
+  }
+  
+  .fb-leaf-2 {
+    bottom: 170px;
+    right: 90px;
+    transform: rotate(30deg);
+  }
+  
+  .fb-leaf-3 {
+    bottom: 100px;
+    left: 80px;
+    transform: rotate(-40deg);
+  }
+  
+  .fb-leaf-4 {
+    bottom: 120px;
+    right: 80px;
+    transform: rotate(40deg);
+  }
+  
+  .fb-leaf-5 {
+    bottom: 50px;
+    left: 140px;
+    transform: rotate(-10deg);
+  }
+  
+  /* Ribbon */
+  .fb-wrapper-ribbon {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 40px;
+    z-index: 5;
+  }
+  
+  .fb-ribbon-segment {
+    position: absolute;
+    width: 180px;
+    height: 40px;
+    background: var(--fb-accent-color);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .fb-ribbon-segment-1 {
+    transform: rotate(-5deg);
+    z-index: 1;
+  }
+  
+  .fb-ribbon-segment-2 {
+    transform: rotate(5deg);
+    z-index: 2;
+  }
+  
+  /* Love Message */
+  .fb-love-message {
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(109, 89, 122, 0.3);
+    animation: fb-fadeIn 1s ease 2s forwards;
+    opacity: 0;
+  }
+  
+  .fb-love-message h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    color: var(--fb-primary-color);
+    margin-bottom: 15px;
+  }
+  
+  .fb-love-message p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: var(--fb-primary-color);
+  }
+  
+  .fb-signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin-top: 10px;
+    color: var(--fb-accent-color);
+  }
+  
+  /* Navigation */
+  .fb-navigation-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .fb-return-button, .fb-home-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: rgba(109, 89, 122, 0.8);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--fb-shadow-color);
+  }
+  
+  .fb-home-button {
+    background: rgba(181, 131, 141, 0.8);
+    box-shadow: 0 5px 15px rgba(181, 131, 141, 0.4);
+  }
+  
+  .fb-return-button:hover, .fb-home-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(109, 89, 122, 0.5);
+  }
+  
+  .fb-home-button:hover {
+    background: var(--fb-tulip-color-2);
+    box-shadow: 0 8px 25px rgba(181, 131, 141, 0.5);
+  }
+  
+  /* Animations - Scoped with prefix */
+  @keyframes fb-fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fb-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .fb-bouquet-title {
+      font-size: 2.5rem;
+    }
+    
+    .fb-bouquet {
+      transform: scale(0.8);
+    }
+    
+    .fb-navigation-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .fb-return-button, .fb-home-button {
+      width: 100%;
+      max-width: 240px;
+      text-align: center;
+    }
+  }
